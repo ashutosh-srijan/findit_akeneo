@@ -1,0 +1,19 @@
+{% extends 'PimDashboardBundle:Widget:base.html.twig' %}
+
+{% set widgetTitle = 'pim_dashboard.widget.completeness.title'|trans %}
+
+{% set widgetContent %}
+    <table id="completeness-widget"></table>
+
+    <script type="text/javascript">
+        require(
+            ['jquery', 'pim/dashboard/completeness-widget'],
+            function ($, CompletenessWidget) {
+                'use strict';
+                $(function() {
+                    CompletenessWidget.init({el: '#completeness-widget', alias: 'completeness'});
+                });
+            }
+        );
+    </script>
+{% endset %}

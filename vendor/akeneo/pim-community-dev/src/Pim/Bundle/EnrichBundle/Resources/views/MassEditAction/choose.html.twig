@@ -1,0 +1,38 @@
+{% extends 'PimEnrichBundle:MassEditAction:layout.html.twig' %}
+
+{% block content %}
+    {% set title = ('pim_enrich.mass_edit_action.' ~ operator.name ~  '.page_title')|trans %}
+    {% set subtitle = ('pim_enrich.mass_edit_action.' ~ operator.name ~ '.page_subtitle')|transchoice(count) %}
+    {{ elements.page_header(title, null, subtitle) }}
+
+    {{ parent() }}
+
+    <div class="row">
+        <div class="offset1">
+            <h3>{{ title }}</h3>
+            <h4>{{ subtitle }}</h4>
+        </div>
+    </div>
+
+    {{ form_start(form, { 'action': path('pim_enrich_mass_edit_action_choose', queryParams ) }) }}
+
+        <div class="row">
+            <div class="offset1">
+                {{ form_widget(form.operationAlias) }}
+            </div>
+        </div>
+
+        <div class="row buffer-top">
+            <div class="offset1">
+                {{ elements.link('btn.cancel', path(operator.performedOperationRedirectionRoute)) }}
+                {{ elements.submitBtn('btn.next') }}
+            </div>
+        </div>
+
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block head_script_component %}
+    {% set currentStep = 2 %}
+    {{ parent() }}
+{% endblock %}

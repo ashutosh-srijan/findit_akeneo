@@ -1,0 +1,18 @@
+assetic:
+    bundles:
+        - OroAsseticBundle
+        - OroUIBundle
+        - OroUserBundle
+        - OroFilterBundle
+        - OroNavigationBundle
+        - OroWindowsBundle
+        - OroEntityExtendBundle
+        - OroSecurityBundle
+        - PimUIBundle
+        - PimCatalogBundle
+        - PimEnrichBundle
+        - PimNotificationBundle
+    filters:
+        lessphp:
+            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+            apply_to: \.less$

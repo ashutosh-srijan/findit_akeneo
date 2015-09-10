@@ -1,0 +1,3 @@
+pim_enrich_locale_index:
+    path: /
+    defaults: { _controller: pim_enrich.controller.locale:indexAction }

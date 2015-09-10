@@ -1,0 +1,17 @@
+Pim\Bundle\EnrichBundle\MassEditAction\Operator\AbstractMassEditOperator:
+    properties:
+        operation:
+            - Valid: ~
+
+Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToGroups:
+    properties:
+        groups:
+            - Valid:
+                traverse: true
+
+Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToVariantGroup:
+    properties:
+        group:
+            - Valid:
+                traverse: true
+            - NotNull: { groups: [configureAction] }
